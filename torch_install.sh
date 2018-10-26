@@ -22,6 +22,7 @@ cudnn_torch_install(){
 
 # install hdf5
 hdf5_torch_install(){
+   sudo apt-get install -y libhdf5-serial-dev hdf5-tools
    proxychains luarocks install hdf5
 }
 
@@ -49,8 +50,8 @@ nccl_torch_install(){
 
 mkdir ~/projects
 
-torch_install
-cudnn_torch_install
+#torch_install
+#cudnn_torch_install
 hdf5_torch_install
 
 # torch7's nccl is dependent on the nccl-1.x.x not the nccl-2
