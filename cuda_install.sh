@@ -14,3 +14,9 @@ sudo apt install -y cuda9.0 cuda-cublas-9-0 cuda-cufft-9-0 cuda-curand-9-0 \
 	        libnccl2=2.2.13-1+cuda9.0 cuda-command-line-tools-9-0
 
 sudo apt install -y cuda-9-0
+
+
+# hold the version
+sudo apt-mark hold cuda-9-0
+sudo apt-mark hold libcudnn7
+sudo apt-mark hold libnccl2
