@@ -47,6 +47,7 @@ nccl_torch_install(){
     cd ~/projects
 }
 
+mkdir ~/projects
 
 torch_install
 cudnn_torch_install
