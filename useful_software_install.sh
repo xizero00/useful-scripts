@@ -13,6 +13,5 @@ sudo apt install -y \
     uget \
     p7zip-full \
     ssh \
-    silversearcher-ag \
-    ntop \
+    silversearcher-ag
 
