@@ -1,20 +1,21 @@
 #!/usr/bin/env bash
 
 bundle_install(){
-sudo apt install -y \
-    htop \
-    git \
-    dstat \
-    sshfs \
-    mc \
-    cmake \
-    psensor\
-    lm-sensors \
-    unrar \
-    uget \
-    p7zip-full \
-    ssh \
-    silversearcher-ag
+    sudo apt install -y \
+        htop \
+        git \
+        dstat \
+        sshfs \
+        mc \
+        cmake \
+        psensor\
+        lm-sensors \
+        unrar \
+        uget \
+        p7zip-full \
+        ssh \
+        silversearcher-ag \
+        proxychains
 }
 
 # vscode
@@ -28,5 +29,19 @@ vscode_install(){
     sudo apt-get install -y code # or code-insiders
 }
 
-#bundle_install
+# ss
+ss_install(){
+    SERVER_IP=1.1.1.1
+    SERVER_PORT=1111
+    LOCAL_PORT=1080
+    PASSWORD=xxxx
+
+    sudo pip install git+https://github.com/shadowsocks/shadowsocks.git@master
+    sudo mv /etc/rc.local /etc/rc.local.bak
+    sudo sh -c 'echo "sslocal -s $SERVER_IP -p $SERVER_PORT -l $LOCAL_PORT  -k $PASSWORD --fast-open -d start" > /etc/rc.local'
+    sudo systemctl restart rc.local
+}
+
+bundle_install
 vscode_install
+ss_install
