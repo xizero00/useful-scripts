@@ -52,6 +52,9 @@ mkdir ~/projects
 torch_install
 cudnn_torch_install
 hdf5_torch_install
+
+# torch7's nccl is dependent on the nccl-1.x.x not the nccl-2
+# but nccl-1.x.x is dependent on CUDA8
 #nccl_compile_install
 #nccl_torch_install
 
