@@ -50,8 +50,8 @@ nccl_torch_install(){
 
 mkdir ~/projects
 
-#torch_install
-#cudnn_torch_install
+torch_install
+cudnn_torch_install
 hdf5_torch_install
 
 # torch7's nccl is dependent on the nccl-1.x.x not the nccl-2
