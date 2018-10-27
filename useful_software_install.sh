@@ -65,9 +65,23 @@ ss_install(){
     PASSWORD=xxxx
     sudo apt install python-pip
     sudo pip install git+https://github.com/shadowsocks/shadowsocks.git@master
+    
+    # back up rc.local to rc.local.bak
     sudo mv /etc/rc.local /etc/rc.local.bak
-    sudo sh -c 'echo "#!/bin/sh -e\n sslocal -s $SERVER_IP -p $SERVER_PORT -l $LOCAL_PORT  -k $PASSWORD --fast-open -d start" > /etc/rc.local\n exit 0'
-    sudo chmod +x /etc/rc.local
+    
+    # generate rc.local in conf directory
+    echo "#!/bin/sh -e
+sslocal -s $SERVER_IP -p $SERVER_PORT -l $LOCAL_PORT  -k $PASSWORD --fast-open -d start
+exit 0" > ./conf/rc.local
+
+    sudo chown root:root ./conf/rc.local
+    sudo chmod +x ./conf/rc.local
+    sudo mv ./conf/rc.local /etc/rc.local
+
+    # wrong 
+    # sudo sh -c 'echo "#!/bin/sh -e\n sslocal -s $SERVER_IP -p $SERVER_PORT -l $LOCAL_PORT  -k $PASSWORD --fast-open -d start" > /etc/rc.local\n exit 0'
+    # sudo chmod +x /etc/rc.local
+    
     sudo systemctl restart rc.local
     sudo systemctl status rc.local
 }
