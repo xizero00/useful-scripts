@@ -28,13 +28,11 @@ vscode_install(){
     sudo apt-get install -y code # or code-insiders
 }
 
+# proxychains
 proxychains_install(){
     sudo apt install proxychains
     sudo mv /etc/proxychains.conf /etc/proxychains.conf.bak
     sudo cp ./conf/proxychains.conf /etc/proxychains.conf
-    
-    
-
 }
 
 # ss
