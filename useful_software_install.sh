@@ -31,7 +31,7 @@ vscode_install(){
 proxychains_install(){
     sudo apt install proxychains
     sudo mv /etc/proxychains.conf /etc/proxychains.conf.bak
-    sudo cp ./proxychains.conf /etc/proxychains.conf
+    sudo cp ./conf/proxychains.conf /etc/proxychains.conf
     
     
 
