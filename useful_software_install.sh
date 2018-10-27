@@ -12,10 +12,26 @@ bundle_install(){
         lm-sensors \
         unrar \
         uget \
+        curl \
         p7zip-full \
         ssh \
         silversearcher-ag \
         proxychains
+}
+
+# apt-fast
+aptfast_install(){
+    sudo add-apt-repository ppa:apt-fast/stable
+    sudo apt-get update
+    sudo apt-get -y install apt-fast
+}
+
+# chrome
+chrome_install(){
+    sudo cp repo/google-chrome.list /etc/apt/sources.list.d/google-chrome.list
+    sudo apt-key adv --keyserver keyserver.ubuntu.com --recv 1397BC53640DB551
+    sudo apt update
+    sudo apt install google-chrome-stable
 }
 
 # vscode
@@ -52,6 +68,8 @@ ss_install(){
     sudo systemctl status rc.local
 }
 
-bundle_install
+#bundle_install
+aptfast_install
 vscode_install
-ss_install
+#chrome_install
+#ss_install
