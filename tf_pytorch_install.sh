@@ -7,5 +7,8 @@ sudo pip install torch
 sudo pip install torchvision
 
 sudo pip3 install torch
-sudo pip3 install torchvisio
+sudo pip3 install torchvision
+
+# install ipython
+sudo apt install ipython ipython3
 
