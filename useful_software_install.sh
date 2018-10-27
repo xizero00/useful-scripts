@@ -28,20 +28,30 @@ vscode_install(){
     sudo apt-get install -y code # or code-insiders
 }
 
+proxychains_install(){
+    sudo apt install proxychains
+    sudo mv /etc/proxychains.conf /etc/proxychains.conf.bak
+    sudo cp ./proxychains.conf /etc/proxychains.conf
+    
+    
+
+}
+
 # ss
 ss_install(){
+    proxychains_install
+    
     SERVER_IP=xxxxx
     SERVER_PORT=xxx
     LOCAL_PORT=1080
     PASSWORD=xxxx
     sudo apt install python-pip
-    sudo apt install proxychains
-
     sudo pip install git+https://github.com/shadowsocks/shadowsocks.git@master
     sudo mv /etc/rc.local /etc/rc.local.bak
     sudo sh -c 'echo "#!/bin/sh -e\n sslocal -s $SERVER_IP -p $SERVER_PORT -l $LOCAL_PORT  -k $PASSWORD --fast-open -d start" > /etc/rc.local\n exit 0'
     sudo chmod +x /etc/rc.local
     sudo systemctl restart rc.local
+    sudo systemctl status rc.local
 }
 
 bundle_install
