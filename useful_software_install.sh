@@ -21,6 +21,7 @@ bundle_install(){
 
 # apt-fast
 aptfast_install(){
+    # reference : https://github.com/ilikenwf/apt-fast#package-manager
     sudo add-apt-repository ppa:apt-fast/stable
     sudo apt-get update
     sudo apt-get -y install apt-fast
