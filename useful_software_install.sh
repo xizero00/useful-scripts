@@ -29,6 +29,7 @@ aptfast_install(){
 
 # chrome
 chrome_install(){
+    # reference : https://github.com/FZUG/repo/wiki/%E5%AE%89%E8%A3%85-Chrome
     sudo cp repo/google-chrome.list /etc/apt/sources.list.d/google-chrome.list
     sudo apt-key adv --keyserver keyserver.ubuntu.com --recv 1397BC53640DB551
     sudo apt update
@@ -37,6 +38,7 @@ chrome_install(){
 
 # vscode
 vscode_install(){
+    # reference : https://code.visualstudio.com/docs/setup/linux
     curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
     sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
     sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
@@ -56,6 +58,7 @@ proxychains_install(){
 ss_install(){
     proxychains_install
     
+    # reference : https://github.com/shadowsocks/shadowsocks/blob/master/README.md
     SERVER_IP=xxxxx
     SERVER_PORT=xxx
     LOCAL_PORT=1080
@@ -69,8 +72,8 @@ ss_install(){
     sudo systemctl status rc.local
 }
 
-#bundle_install
+bundle_install
 aptfast_install
 vscode_install
-#chrome_install
-#ss_install
+chrome_install
+ss_install
