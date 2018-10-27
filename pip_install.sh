@@ -1,11 +1,22 @@
 #!/usr/bin/env bash
+curl https://bootstrap.pypa.io/get-pip.py | sudo python3
 
-sudo apt install -y python3-pip python-pip
+curl https://bootstrap.pypa.io/get-pip.py | sudo python
 
-sudo -H pip3 install --upgrade pip
-sudo -H pip install --upgrade pip
 
-sudo apt remove -y python3-pip python-pip
 
+# # install pip3 and update it
+# sudo apt install -y python3-pip
+# sudo -H pip3 install -U pip
+# sudo apt remove -y python3-pip
+
+
+# source ~/.bashrc
+
+# # install pip2 and update it
+# sudo apt install -y python-pip
+# sudo -H pip install -U pip
+# sudo apt remove -y python-pip
+
+# set mirror repo
 pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
-pip3 config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
