@@ -1,9 +1,9 @@
 
 #!/usr/bin/env bash
 
-cd ~/projects
+cd ~
 git clone https://github.com/gpakosz/.tmux.git
 cd ~
-ln -s -f ~/projects/.tmux/.tmux.conf
-cp ~/projects/.tmux/.tmux.conf.local .
+ln -s -f ~/.tmux/.tmux.conf
+cp ~/.tmux/.tmux.conf.local .
 
