@@ -32,8 +32,8 @@ chrome_install(){
     # reference : https://github.com/FZUG/repo/wiki/%E5%AE%89%E8%A3%85-Chrome
     sudo cp repo/google-chrome.list /etc/apt/sources.list.d/google-chrome.list
     sudo apt-key adv --keyserver keyserver.ubuntu.com --recv 1397BC53640DB551
-    sudo apt update
-    sudo apt install google-chrome-stable
+    sudo apt-fast update
+    sudo apt-fast install google-chrome-stable
 }
 
 # vscode
@@ -42,14 +42,14 @@ vscode_install(){
     curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
     sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
     sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
-    sudo apt-get install -y apt-transport-https
-    sudo apt-get update
-    sudo apt-get install -y code # or code-insiders
+    sudo apt-fast install -y apt-transport-https
+    sudo apt-fast update
+    sudo apt-fast install -y code # or code-insiders
 }
 
 # proxychains
 proxychains_install(){
-    sudo apt install proxychains
+    sudo apt-fast install proxychains
     sudo mv /etc/proxychains.conf /etc/proxychains.conf.bak
     sudo cp ./conf/proxychains.conf /etc/proxychains.conf
 }
@@ -63,7 +63,7 @@ ss_install(){
     SERVER_PORT=xxx
     LOCAL_PORT=1080
     PASSWORD=xxxx
-    sudo apt install python-pip
+    sudo apt-fast install python-pip
     sudo pip install git+https://github.com/shadowsocks/shadowsocks.git@master
     
     # back up rc.local to rc.local.bak
@@ -86,8 +86,19 @@ exit 0" > ./conf/rc.local
     sudo systemctl status rc.local
 }
 
+typora_install(){
+    # sudo apt-key adv --keyserver keyserver.ubuntu.com--recv-keys BA300B7755AFCFAE
+    wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
+    # add Typora's repository
+    sudo add-apt-repository 'deb https://typora.io/linux ./'
+    sudo apt-fast update
+    # install typora
+    sudo apt-fast install typora
+}
+
 bundle_install
 aptfast_install
 vscode_install
 chrome_install
 ss_install
+typora_install
