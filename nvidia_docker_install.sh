@@ -47,7 +47,7 @@ function install_nvidia_docker(){
     docker run --runtime=nvidia --rm nvidia/cuda:9.0-base nvidia-smi
 }
 
-
+# 可能不奏效，因为安装了nvidia-docker
 #三、设置docker下载镜像的地址为国内的docker的镜像地址（即设置registry）
 function set_docker_china_registry(){
     #参考：https://www.docker-cn.com/registry-mirror
@@ -61,4 +61,4 @@ function set_docker_china_registry(){
 
 install_docker_ce
 install_nvidia_docker
-set_docker_china_registry
+#set_docker_china_registry
