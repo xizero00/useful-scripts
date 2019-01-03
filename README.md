@@ -3,7 +3,7 @@ Some useful scripts to install vim pip cuda tensorflow and pytorch nvidia-docker
 This repo can ONLY be used on **Ubuntu 16.04**
 
 # 1.Configure and install basic softwares
-Before install anything, you have to configure it.  
+Before installation, you have to configure it.  
 ### (0) Open the file **useful_software_install.sh**    
 ### (1) If you want to use shadowsocks to bypass the China's great wall.  
 PLEASE SET THE VARIABLE in function **ss_install**
