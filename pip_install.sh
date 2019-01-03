@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
-curl https://bootstrap.pypa.io/get-pip.py | sudo python3
+sudo apt-get install python3-distutils
+sudo apt-get install python-distutils
 
+curl https://bootstrap.pypa.io/get-pip.py | sudo python3
 curl https://bootstrap.pypa.io/get-pip.py | sudo python
 
 
