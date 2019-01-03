@@ -55,7 +55,6 @@ bash tf_pytorch_install.sh
 
 ## Install tmux and configure it
 ```bash
-sudo apt install tmux
 bash tmux_install.sh
 ```
 
