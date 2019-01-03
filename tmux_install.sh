@@ -1,6 +1,7 @@
 
 #!/usr/bin/env bash
 
+sudo apt install tmux
 cd ~
 git clone https://github.com/gpakosz/.tmux.git
 cd ~
