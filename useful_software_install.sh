@@ -16,7 +16,8 @@ bundle_install(){
         p7zip-full \
         ssh \
         silversearcher-ag \
-        proxychains
+        proxychains \
+        gdebi
 }
 
 # apt-fast
