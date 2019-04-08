@@ -33,9 +33,15 @@ bash useful_software_install.sh
 
 # 2. Install other softwares
 
-## Install CUDA
+## Install CUDA and video card driver for Ubuntu 16.04
 ```bash
 bash cuda_install.sh
+```
+
+## Install CUDA and video card driver for Ubuntu 18.04
+```bash
+cd Ubuntu18.04
+bash install_cuda10.sh
 ```
 
 ## Install pip and set the pip repositoy to tsinghua's repo
