@@ -1,6 +1,6 @@
 # Useful-scripts
 Some useful scripts to install vim pip cuda tensorflow and pytorch nvidia-docker  
-This repo can ONLY be used on **Ubuntu 16.04**
+This repo can be used on **Ubuntu 16.04** and **Ubuntu 18.04**
 
 # 1.Configure and install basic softwares
 Before installation, you have to configure it.  
