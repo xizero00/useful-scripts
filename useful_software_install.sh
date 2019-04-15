@@ -17,7 +17,8 @@ bundle_install(){
         ssh \
         silversearcher-ag \
         proxychains \
-        gdebi
+        gdebi \
+        ncdu
 }
 
 # apt-fast
